@@ -1,5 +1,4 @@
 Flask
 Gunicorn
-cross_origin
 psycopg2
 Response
