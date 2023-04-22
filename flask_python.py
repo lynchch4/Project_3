@@ -1,7 +1,7 @@
 from flask_cors import cross_origin
 import psycopg2
 import json
-from flask import Flask, Response
+from flask import Flask, Response, jsonify
 
 
 
@@ -47,13 +47,12 @@ def ethnicity():
     ethnicity_dict = []
 
     for i in range(len(books)):
-        ethnicity = {titles[0]: books[i][0], titles[1]: books[i][1], titles[2]: books[i][2],
-        titles[3]: books[i][3], titles[4]: books[i][4]}
-        
-        ethnicity_dict.append(ethnicity)
+            industry = {titles[0]: books[i][0], titles[1]: books[i][1], titles[2]: books[i][2],
+            titles[3]: books[i][3], titles[4]: books[i][4]}
+            
+            ethnicity_dict.append(industry)
 
     return Response(json.dumps(ethnicity_dict),  mimetype='application/json')
-
 @app.route('/gender')
 @cross_origin()
 def gender():
